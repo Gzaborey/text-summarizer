@@ -4,7 +4,11 @@ A simple servise to summarize text messages.
 
 ## Project description
 
-A brief description of your project and what it does.
+This project has two implementations of a servise. One uses the functionality of only LangChain libraries, other one uses functionality from LangChain and 'transformers' library.
+
+**Why it was needed to create two different implementations of a single service?**  
+
+The task description stated that 
 
 ## Setup (for Windows)
 
