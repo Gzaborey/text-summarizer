@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import JSONResponse
 import uvicorn
-from types import SummaryJSON
 from summarizer import TextSummarizer
 # from summarizer_downgraded import TextSummarizer
 from contextlib import asynccontextmanager
@@ -40,12 +40,11 @@ app = FastAPI(lifespan=lifespan)
 
 
 @app.post("/summarize")
-async def summarize_text(request: TextInput) -> SummaryJSON:
+async def summarize_text(request: TextInput) -> JSONResponse:
     try:
         summary = app.state.model(request.text)
-        result = SummaryJSON
-        result.summary = summary
-        return result
+        result = {"summary": summary}
+        return JSONResponse(content=result)
     except Exception as e:
         logger.error(f"Error during summarization: {e}")
         raise HTTPException(status_code=500, detail="Internal Server Error")
