@@ -24,14 +24,14 @@ The implementation with the usage of 'transformers' library fixes these issues:
 1. Create a virtual environment:
 
     ```bash
-    python -m venv env
+    python -m venv myenv
     ```
 2. Activate a virtual environment:    
 
 
 
     ```bash
-    env\Scripts\activate
+    myenv\Scripts\activate
     ```
 
 3. Install dependencies via 'pip' (choose one):  
