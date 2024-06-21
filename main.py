@@ -1,12 +1,12 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import JSONResponse
 import uvicorn
-from summarizer import TextSummarizer
-# from summarizer_downgraded import TextSummarizer
+# from summarizer import TextSummarizer
+from summarizer_downgraded import TextSummarizer
 from contextlib import asynccontextmanager
 from data_models import TextInput
 import logging
-from exceptions import InvalidApiException, DownloadingError
+from exceptions import DownloadingError
 
 
 # Configure the logging
@@ -22,8 +22,6 @@ async def lifespan(application: FastAPI) -> None:
     try:
         logger.info('    Downloading the model...')
         summarizer = TextSummarizer()
-    except TypeError:
-        raise InvalidApiException()
     except Exception as e:
         logger.error(f'  Error during model downloading: {e}')
         try:
