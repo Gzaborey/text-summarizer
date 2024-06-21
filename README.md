@@ -17,7 +17,7 @@ However, there are several problems with this solution:
 The implementation with the usage of 'transformers' library fixes these issues:  
 1. **Official documentation suggests the usage of HuggingFacePipeline in conjunction with 'transformers' library.** 
 2. **Better results due to the usage of a pre-trained tokenizer for a Hugging Face model.**
-3. **No authentication needed, the model is loaded on a server.**
+3. **No authentication needed, the model is loaded on a server and used locally.**
 
 ## Setup (for Windows)
 
