@@ -8,7 +8,7 @@ This project has two implementations of a servise. One uses the functionality of
 
 **Why was it needed to create two different implementations of a single service?**  
 
-The task description stated that the Hugging Face library (presumably 'transformers') shouldn't be used. So, a solution without the usage of this library was created.
+the initial idea was to create an app using pure LangChain implementation.
 
 However, there are several problems with this solution:  
 1. **HuggignFaceEndpoint library from LangChain has a critical bug in it.** To avoid it, an out-of-date LangChain module huggingface-hub should be used, but it will be deprecated with the release of LangChain 3.0.0. and is not recommended by the developers.  
